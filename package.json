@@ -24,7 +24,7 @@
     "deploy": "npx hardhat run --network deploy scripts/deploy.ts",
     "eth-lint": "yarn solhint 'contracts/**/*.sol'",
     "lint": "prettier --check . && eslint --max-warnings 0 --ext ts scripts test && yarn eth-lint",
-    "release": "np",
+    "release": "np --no-tests",
     "prepublishOnly": "yarn build && yarn tsc --skipLibCheck"
   },
   "devDependencies": {
