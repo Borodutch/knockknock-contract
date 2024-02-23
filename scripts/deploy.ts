@@ -1,6 +1,8 @@
-import { ContractTransactionResponse, ZeroAddress } from 'ethers'
+import { ContractTransactionResponse } from 'ethers'
 import { HardhatEthersSigner } from '@nomicfoundation/hardhat-ethers/signers'
 import { ethers, run } from 'hardhat'
+import { isEthereumAddress } from 'class-validator'
+import prompts from 'prompts'
 
 async function printSignerInfo(signer: HardhatEthersSigner) {
   const address = await signer.getAddress()
@@ -34,7 +36,12 @@ async function main() {
   const contractName = 'KnockKnock'
   console.log(`Deploying ${contractName}...`)
   const Contract = await ethers.getContractFactory(contractName)
-  const hostContract = ZeroAddress
+  const { hostContract } = await prompts({
+    type: 'text',
+    name: 'hostContract',
+    message: 'Specify the contract to check balanceOf',
+    validate: (value) => isEthereumAddress(value),
+  })
   const contract = await Contract.deploy(hostContract)
   const deploymentTransaction = contract.deploymentTransaction()
   if (!deploymentTransaction) {
