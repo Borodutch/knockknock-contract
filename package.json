@@ -1,10 +1,10 @@
 {
-  "name": "@borodutch/smart-contract-starter",
+  "name": "@borodutch/knockknock-contract",
   "version": "0.0.1",
   "description": "A starter for Solidity smart contracts for Ethereum",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Borodutch/smart-contract-starter"
+    "url": "git+https://github.com/Borodutch/knockknock-contract"
   },
   "license": "MIT",
   "np": {
@@ -21,7 +21,6 @@
   "scripts": {
     "build": "yarn clean && npx hardhat compile",
     "clean": "npx hardhat clean",
-    "test": "npx hardhat test",
     "deploy": "npx hardhat run --network deploy scripts/deploy.ts",
     "eth-lint": "yarn solhint 'contracts/**/*.sol'",
     "lint": "prettier --check . && eslint --max-warnings 0 --ext ts scripts test && yarn eth-lint",
