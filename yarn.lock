@@ -58,9 +58,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@borodutch/smart-contract-starter@workspace:.":
+"@borodutch/knockknock-contract@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@borodutch/smart-contract-starter@workspace:."
+  resolution: "@borodutch/knockknock-contract@workspace:."
   dependencies:
     "@nomicfoundation/hardhat-chai-matchers": "npm:^2.0.3"
     "@nomicfoundation/hardhat-ethers": "npm:^3.0.5"
