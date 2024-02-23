@@ -40,6 +40,7 @@ async function main() {
     type: 'text',
     name: 'hostContract',
     message: 'Specify the contract to check balanceOf',
+    initial: '0xc019f24ff7a1273079f7a6bac2cf602e5898c0ba',
     validate: (value) => isEthereumAddress(value),
   })
   const contract = await Contract.deploy(hostContract)
